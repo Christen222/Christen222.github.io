@@ -2,6 +2,7 @@ html {
   background-color: white;
 }
 body {
+  font: 1.2em / 1.5 system-ui;
   padding: 20px;
   width: 500px;
   background-color: #efefef;
@@ -14,5 +15,4 @@ ul {
   padding: 30px;
   border-radius: 20px;
 }
-  font: 1.2em / 1.5 system-ui;
 }
