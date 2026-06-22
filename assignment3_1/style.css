@@ -26,6 +26,13 @@ h2 {
   font-weight: bold;
 }
 
+ul {
+  background-color: white;
+  border: 5px solid purple;
+  padding: 30px;
+  border-radius: 20px;
+}
+
 a {
   color: green;
 }
@@ -33,11 +40,4 @@ a:hover,
 a:focus {
   color: darkgreen;
   text-decoration: none;
-}
-
-ul {
-  background-color: white;
-  border: 5px solid purple;
-  padding: 30px;
-  border-radius: 20px;
 }
