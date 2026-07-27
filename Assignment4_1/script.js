@@ -19,8 +19,8 @@ function returnRandomStoryString() {
   const randomCharacter = randomValueFromArray(characters);
   const randomPlace = randomValueFromArray(places);
   const randomEvent = randomValueFromArray(events);
-  
-  var storyText = "It was 94 Fahrenheit outside, so " + randomCharacter + " went for a walk. When they got to " + randomPlace + ", they stared in horror for a few moments, then " + randomEvent + ". Bob saw the whole thing, but was not surprised — ";
+
+  let storyText = "It was 94 Fahrenheit outside, so " + randomCharacter + " went for a walk. When they got to " + randomPlace + ", they stared in horror for a few moments, then " + randomEvent + ". Bob saw the whole thing, but was not surprised — ";
   return storyText;
 }
 
@@ -29,8 +29,10 @@ function returnRandomStoryString() {
 generateBtn.addEventListener("click", generateStory);
 
 function generateStory() {
+  let newStory = returnRandomStoryString();
   if (customName.value !== "") {
     const name = customName.value;
+    newStory = newStory.replace("Bob", name);
   }
 
   if (document.getElementById("uk").checked) {
@@ -39,6 +41,6 @@ function generateStory() {
   }
 
   // TODO: replace "" with the correct expression
-  story.textContent = "";
+  story.textContent = newStory;
   story.style.visibility = "visible";
 }
