@@ -37,3 +37,9 @@ newImage.addEventListener("keydown", (e) => {
 });
 }
 
+// 3. Show clicked/activated thumb full-size
+function updateDisplayedImage(e) {
+displayedImage.src = e.target.src;
+displayedImage.alt = e.target.alt;
+}
+
