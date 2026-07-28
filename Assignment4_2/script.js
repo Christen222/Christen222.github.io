@@ -6,46 +6,46 @@ const overlay = document.querySelector(".overlay");
 
 // 1. Data object
 const images = [
-{ filename: "pic1.jpg", alt: "Closeup of a human eye" },
-{ filename: "pic2.jpg", alt: "Rock that looks like a wave" },
-{ filename: "pic3.jpg", alt: "Purple and white pansies" },
-{ filename: "pic4.jpg", alt: "Section of wall from a pharaoh's tomb" },
-{ filename: "pic5.jpg", alt: "Large moth on a leaf" },
+  { filename: "pic1.jpg", alt: "Closeup of a human eye" },
+  { filename: "pic2.jpg", alt: "Rock that looks like a wave" },
+  { filename: "pic3.jpg", alt: "Purple and white pansies" },
+  { filename: "pic4.jpg", alt: "Section of wall from a pharaoh's tomb" },
+  { filename: "pic5.jpg", alt: "Large moth on a leaf" },
 ];
 
 // 2. Build thumbnails
 const baseURL = "https://mdn.github.io/shared-assets/images/examples/learn/gallery/";
 
 for (const image of images) {
-const newImage = document.createElement("img");
-newImage.src = `${baseURL}${image.filename}`;
-newImage.alt = image.alt;
+  const newImage = document.createElement("img");
+  newImage.src = baseURL + image.filename;
+  newImage.alt = image.alt;
   newImage.tabIndex = 0; // focusable via keyboard
 
-thumbBar.appendChild(newImage);
+  thumbBar.appendChild(newImage);
 
-newImage.addEventListener("click", updateDisplayedImage);
-newImage.addEventListener("keydown", (e) => {
+  newImage.addEventListener("click", updateDisplayedImage);
+  newImage.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
-    updateDisplayedImage(e);
+      updateDisplayedImage(e);
     }
-});
+  });
 }
 
 // 3. Show clicked/activated thumb full-size
 function updateDisplayedImage(e) {
-displayedImage.src = e.target.src;
-displayedImage.alt = e.target.alt;
+  displayedImage.src = e.target.src;
+  displayedImage.alt = e.target.alt;
 }
 
 // 4. Darken/Lighten toggle
 btn.addEventListener("click", () => {
-if (btn.classList.contains("dark")) {
+  if (btn.classList.contains("dark")) {
     btn.textContent = "Lighten";
     overlay.style.backgroundColor = "rgb(0 0 0 / 0.5)";
-} else {
+  } else {
     btn.textContent = "Darken";
     overlay.style.backgroundColor = "rgb(0 0 0 / 0)";
-}
-btn.classList.toggle("dark"); 
+  }
+  btn.classList.toggle("dark"); // one-liner toggle, per the stretch goal
 });
