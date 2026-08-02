@@ -116,13 +116,14 @@ checkBounds() {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball)) {
+      if (ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
         if (distance < this.size + ball.size) {
-          ball.color = this.color = randomRGB();
+          ball.exists = false;
+          count--;
+          para.textContent = "Ball count: " + count;
         }
       }
     }
@@ -158,7 +159,8 @@ p {
 const balls = [];
 
 const para = document.querySelector("p");
-let count = 0;
+let count = balls.length; // 25, once the balls array is filled
+para.textContent = "Ball count: " + count;
 
 while (balls.length < 25) {
   const size = random(10, 20);
