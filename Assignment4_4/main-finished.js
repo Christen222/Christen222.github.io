@@ -143,7 +143,13 @@ function loop() {
 
   requestAnimationFrame(loop);
 }
-
+p {
+  position: absolute;
+  margin: 0;
+  top: 35px;
+  right: 5px;
+  color: #aaaaaa;
+}
 const balls = [];
 
 while (balls.length < 25) {
