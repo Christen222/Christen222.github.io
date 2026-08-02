@@ -129,6 +129,10 @@ const para = document.querySelector("p");
 let count = balls.length;
 para.textContent = "Ball count: " + count;
 
+ball.exists = false;   
+count--;                
+para.textContent = "Ball count: " + count;   
+
 const evilCircle = new EvilCircle(random(0, width), random(0, height));
 
 function loop() {
