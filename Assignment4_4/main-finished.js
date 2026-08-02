@@ -152,6 +152,9 @@ p {
 }
 const balls = [];
 
+const para = document.querySelector("p");
+let count = 0;
+
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
