@@ -5,17 +5,17 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
-// random number helper
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// random RGB color helper
+
 function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-// base class shared by Ball and EvilCircle
+
 class Shape {
   constructor(x, y, velX, velY) {
     this.x = x;
@@ -30,7 +30,7 @@ class Ball extends Shape {
     super(x, y, velX, velY);
     this.color = color;
     this.size = size;
-    this.exists = true; // tracks whether it's been eaten
+    this.exists = true; 
   }
 
   draw() {
@@ -110,7 +110,7 @@ class EvilCircle extends Shape {
   }
 }
 
-// build the balls
+
 const balls = [];
 while (balls.length < 25) {
   const size = random(10, 20);
@@ -128,10 +128,6 @@ while (balls.length < 25) {
 const para = document.querySelector("p");
 let count = balls.length;
 para.textContent = "Ball count: " + count;
-
-ball.exists = false;   
-count--;                
-para.textContent = "Ball count: " + count;   
 
 const evilCircle = new EvilCircle(random(0, width), random(0, height));
 
