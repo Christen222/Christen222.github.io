@@ -170,6 +170,8 @@ while (balls.length < 25) {
 
   balls.push(ball);
 }
+count++;
+para.textContent = "Ball count: " + count;
 
 function loop() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
