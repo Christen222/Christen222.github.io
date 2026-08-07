@@ -46,5 +46,5 @@ if (btn.classList.contains("dark")) {
     btn.textContent = "Darken";
     overlay.style.backgroundColor = "rgb(0 0 0 / 0)";
 }
-  btn.classList.toggle("dark"); // one-liner toggle, per the stretch goal
+btn.classList.toggle("dark");
 });
